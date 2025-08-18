@@ -1,0 +1,9 @@
+[submodule "Btraj"]
+	path = Btraj
+	url = git@github.com:zhishiwanwan01/Btraj.git
+[submodule "DecompROS"]
+	path = DecompROS
+	url = git@github.com:zhishiwanwan01/DecompROS.git
+[submodule "Fast-Planner"]
+	path = Fast-Planner
+	url = git@github.com:zhishiwanwan01/Fast-Planner.git

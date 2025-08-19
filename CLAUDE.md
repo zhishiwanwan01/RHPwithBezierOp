@@ -4,12 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This repository contains three major UAV trajectory planning and control frameworks:
+This repository is a learning workspace containing three major UAV trajectory planning and control frameworks:
 
 1. **Btraj** - Online UAV trajectory planner using Bezier curves with Fast Marching*/A* path finding
-2. **Fast-Planner** - Comprehensive quadrotor planning system with kinodynamic and topological path planning
+2. **Fast-Planner** - Comprehensive quadrotor planning system with kinodynamic and topological path planning  
 3. **DecompROS** - ROS wrapper for convex decomposition of free space in cluttered environments
 4. **myProj** - Empty directory for custom project work
+5. **notes/** - Learning notes and Git operation guides for code analysis
 
 ## Build System & Commands
 
@@ -31,8 +32,10 @@ catkin build
 Before building, install required dependencies:
 
 ```bash
-# For Btraj
+# For Btraj (requires plan_utils dependency)
 sudo apt-get install libarmadillo-dev
+cd ~/catkin_ws/src
+git clone https://github.com/HKUST-Aerial-Robotics/plan_utils.git
 
 # For Fast-Planner - install NLopt v2.7.1
 git clone -b v2.7.1 https://github.com/stevengj/nlopt.git
@@ -125,8 +128,9 @@ Initialize DecompUtil submodule: `git submodule update --init`
 
 ### Docker Support
 Basic Docker configuration available:
-- `Dockerfile` - Based on `osrf/ros:melodic-desktop-full`
-- `docker-compose.yml` - For containerized development
+- `Dockerfile` - Based on `osrf/ros:melodic-desktop-full` (minimal configuration)
+- `docker-compose.yml` - For containerized development (minimal configuration)
+- `manage.sh` - Management script for development workflow
 
 ## Development Workflow
 
@@ -148,5 +152,11 @@ Basic Docker configuration available:
 - **NLopt Version**: Fast-Planner requires specifically v2.7.1
 - **Submodules**: Initialize DecompUtil with `git submodule update --init`
 - **Dependencies**: Install all prerequisite packages before building
+
+## Git Workflow & Learning Notes
+
+This repository includes structured learning notes in the `notes/` directory:
+- `btraj_code_reading_guide.md` - Git workflow guide for code analysis with commit strategies
+- Branch structure: Uses `readcode` branch for learning commits, `master` for main development
 
 No specific linting or testing commands are configured - validation primarily through simulation launches.

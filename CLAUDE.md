@@ -81,7 +81,7 @@ roslaunch decomp_test_node test_seed_decomp.launch
 - **Front-end:** Fast Marching* (FM*) or A* pathfinding on velocity fields/grid maps
 - **Back-end:** Bezier curve trajectory optimization with corridor constraints
 - **Key files:** `trajectory_generator.h/cpp`, `bezier_base.h/cpp`, `a_star.h/cpp`
-- **Dependencies:** Mosek (for QP solving), sdf_tools, fast_methods
+- **Dependencies:** Mosek 8.1 (for QP solving), sdf_tools, fast_methods
 
 ### Fast-Planner Structure
 - **plan_env:** Online mapping from depth images, ESDF generation
@@ -118,7 +118,7 @@ roslaunch decomp_test_node test_seed_decomp.launch
 ## Special Requirements
 
 ### Mosek License (Btraj only)
-Academic license required from mosek.com. Place license file in `~/mosek/` directory.
+Academic license required from mosek.com for Mosek 8.1. Place license file in `~/mosek/` directory. Btraj includes pre-compiled Mosek 8.1 libraries in `Btraj/third_party/mosek/lib/mosek8_1/`.
 
 ### GPU Depth Rendering (Fast-Planner)
 For realistic depth simulation, install CUDA Toolkit and set appropriate GPU arch flags in CMakeLists.txt.
@@ -148,7 +148,7 @@ Basic Docker configuration available:
 - **Visualization**: All projects include RViz configurations for debugging
 
 ### Common Issues
-- **Mosek License**: Ensure academic license is in `~/mosek/` directory
+- **Mosek License**: Ensure Mosek 8.1 academic license is in `~/mosek/` directory
 - **NLopt Version**: Fast-Planner requires specifically v2.7.1
 - **Submodules**: Initialize DecompUtil with `git submodule update --init`
 - **Dependencies**: Install all prerequisite packages before building
